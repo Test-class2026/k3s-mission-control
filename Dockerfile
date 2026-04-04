@@ -9,5 +9,6 @@ RUN npm install --production
 # Copy the rest of the app
 COPY . .
 
+#Expose port
 EXPOSE 3000
 CMD ["node", "server.js"]
