@@ -59,4 +59,4 @@ app.use(express.static(__dirname + '/public'));
 
 // BUG: calling .listen() on undefined — crashes immediately at startup
 const server = undefined;
-server.listen(PORT, () => console.log(`${APP_NAME} running on port ${PORT} [${APP_ENV}]`));
+app.listen(PORT, () => console.log(`${APP_NAME} running on port ${PORT} [${APP_ENV}]`));
