@@ -1,0 +1,36 @@
+╔══════════════════════════════════════════════════╗
+║       K3s Mission Control — Deployed!            ║
+╚══════════════════════════════════════════════════╝
+
+Release:   {{ .Release.Name }}
+Namespace: {{ .Release.Namespace }}
+Version:   {{ .Chart.AppVersion }}
+Replicas:  {{ .Values.replicaCount }}
+
+── Access the App ──────────────────────────────────
+
+  NodePort (direct):
+  http://<EC2_PUBLIC_IP>:{{ .Values.service.nodePort }}
+
+{{- if .Values.ingress.enabled }}
+  Ingress (hostname):
+  http://{{ .Values.ingress.host }}
+  (Add {{ .Values.ingress.host }} to /etc/hosts pointing at your EC2 IP)
+{{- end }}
+
+── Useful Commands ─────────────────────────────────
+
+  Check pods:
+  kubectl get pods -l app.kubernetes.io/instance={{ .Release.Name }}
+
+  View logs:
+  kubectl logs -l app.kubernetes.io/instance={{ .Release.Name }}
+
+  Upgrade:
+  helm upgrade {{ .Release.Name }} ./mission-control
+
+  Roll back:
+  helm rollback {{ .Release.Name }} <REVISION>
+
+  Uninstall:
+  helm uninstall {{ .Release.Name }}
