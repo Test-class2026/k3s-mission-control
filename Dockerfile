@@ -1,5 +1,6 @@
 FROM node:18-alpine
 
+# working area
 WORKDIR /app
 
 # Copy dependency files first (better Docker layer caching)
