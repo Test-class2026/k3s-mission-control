@@ -5,7 +5,7 @@ image:
   pullPolicy: Always
 
 # ── Deployment ──────────────────────────────────────────
-replicaCount: 2
+replicaCount: 4
 
 strategy:
   type: RollingUpdate
