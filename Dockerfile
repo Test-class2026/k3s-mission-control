@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 
-# Copy the rest of the app
+# Copy the rest of the app.
 COPY . .
 
 # For another push
