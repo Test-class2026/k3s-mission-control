@@ -12,6 +12,5 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
-    "prom-client": "^15.1.3"
   }
 }
